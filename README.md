@@ -6,6 +6,6 @@ Number and name of feature: Display Images
 Estimate of time needed to complete: 1 HR
 Start time: 17:30
 
-Finish time: _____
+Finish time: 18:30
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1HR
