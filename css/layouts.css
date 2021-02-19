@@ -1,5 +1,12 @@
 
 
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
 main {
   width: 960px;
   margin: 0 auto;
@@ -10,16 +17,7 @@ main {
 }
 
 h1 {
-  font-family: 'Amatic SC', cursive;
-  font-size: 48px;
-  text-align: center;
   margin-top: 24px;
-}
-
-h2 {
-  font-family: 'Amatic SC', cursive;
-  font-size: 24px;
-  font-weight: 600;
 }
 
 select {
@@ -30,28 +28,29 @@ select {
 
 ul {
   max-width: 90%;
-  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
 }
 
-ul li:first-child {
+#thejQuerryUl li:first-child {
   display: none;
 }
 
+#theMustacheId ul li:first-child {
+  display: none; 
+}
+
+
 li {
   width: 30%;
-  float: left;
-  text-align: center;
 }
 
 img {
+  display: block;
   width: 90%;
   margin: auto;
-  display: block;
   padding: 12px ;
 }
 
@@ -59,30 +58,13 @@ li p {
   margin-bottom: 24px;;
 }
 
-#templates {
-  display: none;
-=======
-*{
-    box-sizing: border-box;
+
+main > div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-ul {
-    max-width: 90%;
-    margin:auto;
-}
-
-li {
-    width: 33%;
-    float: left;
-}
-
-img {
-    width: 90%;
-    margin: auto;
-    display: block;
-}
-
-#templates {
-    display:none;
-
+ul#theMustacheId {
+  margin: auto;
 }
