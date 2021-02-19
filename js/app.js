@@ -41,11 +41,11 @@ UnicornPic.prototype.renderWithJQueryAndMustache = function () {
 UnicornPic.newUnicornArray = [];
 UnicornPic.newUnicornArray2 = [];
 
-// $.ajax('../data/page-1.json').then(resurrectDataFunction);
-$.ajax('../data/page-1.json').then(data => {
+// $.ajax('/data/page-1.json').then(resurrectDataFunction);
+$.ajax('/data/page-1.json').then(data => {
   resurrectDataFunction(data, UnicornPic.newUnicornArray);
 
-  $.ajax('../data/page-2.json').then(data => {
+  $.ajax('/data/page-2.json').then(data => {
     resurrectDataFunction(data, UnicornPic.newUnicornArray2);
     UnicornPic.allPics.forEach(unicornObject => {
       unicornObject.renderUnicornPic();
