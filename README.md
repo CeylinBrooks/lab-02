@@ -50,3 +50,7 @@ and instructor Nicholas Carignan
 + Start time: 3:00 PST 
 + Finish time: 7:00 PST
 + Actual time needed to complete: 4 HOURs 
+
+### update 02/19/2021
+
+after loading to github and merging the page did not work anymore. I reached out to TA Sara Russet and Chance Harmon for support. Turns out the git merge pared duplicate json data into the json file. Found it and fixed it. Thank you Chance and Sara.
