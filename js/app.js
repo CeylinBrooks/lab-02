@@ -42,10 +42,11 @@ UnicornPic.newUnicornArray = [];
 UnicornPic.newUnicornArray2 = [];
 
 // $.ajax('/data/page-1.json').then(resurrectDataFunction);
-$.ajax('/data/page-1.json').then(data => {
+$.ajax('data/page-1.json').then(data => {
   resurrectDataFunction(data, UnicornPic.newUnicornArray);
-
-  $.ajax('/data/page-2.json').then(data => {
+  // I am leaving this commented line of code on purpose becuase Chance had me type this and said we will soon learn about this method of error loggin in 301
+  // .catch('error', err => console.error(err))
+  $.ajax('data/page-2.json').then(data => {
     resurrectDataFunction(data, UnicornPic.newUnicornArray2);
     UnicornPic.allPics.forEach(unicornObject => {
       unicornObject.renderUnicornPic();
@@ -57,13 +58,13 @@ $.ajax('/data/page-1.json').then(data => {
 function resurrectDataFunction(resurrectedData, nameOfTheArray) {
   resurrectedData.forEach(unicornObject => {
     nameOfTheArray.push(new UnicornPic(unicornObject.image_url, unicornObject.title, unicornObject.description, unicornObject.keyword, unicornObject.horns));
+    // console.log('this is the DATA', UnicornPic.newUnicornArray, UnicornPic.newUnicornArray2)
   });
 }
 
 function dropDownMenu() {
   const tempArr = [];
   UnicornPic.allPics.forEach(unicornObject => {
-    // unicornObject.renderUnicornPic();
     if (!tempArr.includes(`${unicornObject.keyword.toLowerCase()}`)) {
       tempArr.push((unicornObject.keyword).toLowerCase());
     }
@@ -123,6 +124,7 @@ let thePageYouAreOn = 0;
 $('button:first-of-type').on('click', () => {
   emptyOutPage();
   thePageYouAreOn = 1;
+  // I am leaving this code snippet on purpose - because it taught me that I can inject raw html into my dom page
   // $('ul').append('<li><h2></h2><img src="" alt=""><p></p></li>');
   UnicornPic.newUnicornArray.forEach(unicornObject => unicornObject.renderWithJQueryAndMustache());
   // another idea - empty out the drop down menu and rerender it;
@@ -139,14 +141,10 @@ $('button:nth-of-type(3)').on('click', () => {
   emptyOutPage();
   // sort images by name
   if (thePageYouAreOn === 1) {
-    // console.log('before SORT', UnicornPic.newUnicornArray);
     let newlySortedArray = sortBy(UnicornPic.newUnicornArray, 'title');
-    // console.log('after SORT', UnicornPic.newUnicornArray);
     newlySortedArray.forEach(unicornObject => unicornObject.renderWithJQueryAndMustache());
   } else {
-    // console.log('before SORT 2', UnicornPic.newUnicornArray);
     let newlySortedArray2 = sortBy(UnicornPic.newUnicornArray2, 'title');
-    // console.log('after SORT 2', UnicornPic.newUnicornArray);
     newlySortedArray2.forEach(unicornObject => unicornObject.renderWithJQueryAndMustache());
   }
 });

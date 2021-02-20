@@ -31,3 +31,12 @@ li {
   text-align: center;
   list-style: none;
 }
+
+footer {
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 24px;
+  
+}
